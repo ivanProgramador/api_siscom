@@ -1,7 +1,15 @@
 const Sequelize = require('sequelize');
 const connection = require('./database');
 
-const MOVVITEM = connection.define('MOVVITEM',{
+const MOVVITEN = connection.define('TB_MOVVITEN',{
+
+    id:{
+
+        type: Sequelize.INTEGER,
+        allowNull:false,
+        primaryKey: true
+
+    },
 
     ID_VENDA:{
         type: Sequelize.INTEGER,
@@ -56,32 +64,32 @@ const MOVVITEM = connection.define('MOVVITEM',{
         allowNull:false
     },
     VIT_DHLANC:{
-        type: Sequelize.DATETIME,
+        type: Sequelize.DATE,
         allowNull:false
     },
     VIT_DHPRODUCAO:{
-        type: Sequelize.DATETIME,
+        type: Sequelize.DATE,
         allowNull:false
     },
     VIT_DHCOMA:{
-        type: Sequelize.DATETIME,
+        type: Sequelize.DATE,
         allowNull:false
     },
     VIT_DHSAIDA:{
-        type: Sequelize.DATETIME,
+        type: Sequelize.DATE,
         allowNull:false
     },
     VIT_CANCEL:{
-        type: Sequelize.DATETIME,
+        type: Sequelize.DATE,
         allowNull:false
     },
     VIT_CANUSU:{
-        type: Sequelize.DATETIME,
+        type: Sequelize.DATE,
         allowNull:false
 
     },
     VIT_DHCANC:{
-        type: Sequelize.DATETIME,
+        type: Sequelize.DATE,
         allowNull:false
     },
     VIT_CDALIQ:{
@@ -243,19 +251,43 @@ const MOVVITEM = connection.define('MOVVITEM',{
     VIT_VLRUNIFIS:{
         type: Sequelize.DECIMAL,
         allowNull:false
+    },
+    VIT_VLRTOTFIS:{
+        type: Sequelize.DECIMAL,
+        allowNull:false
+    },
+    VIT_UNDFIS:{
+        type: Sequelize.STRING,
+        allowNull:false
+    },
+    VIT_UND:{
+        type: Sequelize.STRING,
+        allowNull:false
+    },
+    VIT_SENHASTR:{
+        type: Sequelize.STRING,
+        allowNull:false
+    },
+    VIT_DHCANCEL_IMP:{
+        type: Sequelize.DATE,
+        allowNull:false
+    },
+    VIT_IDENTIFICADOR_CUPOM_CAMPANHA:{
+        type: Sequelize.STRING,
+        allowNull:false
+    },
+    VIT_ESTCX_CANCEL:{
+        type: Sequelize.INTEGER,
+        allowNull:false
+    },
+    ID_ITEM_ORIGEN:{
+        type: Sequelize.INTEGER,
+        allowNull:false
+    },
+    GUID:{
+        type: Sequelize.INTEGER,
+        allowNull:false
     }
-
-
-
-
-
-
-
-    
-
-
-
-
 }) 
 
-module.exports = MOVVITEM
+module.exports = MOVVITEN;

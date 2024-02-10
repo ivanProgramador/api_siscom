@@ -1,0 +1,48 @@
+<%- include('partials/header'); -%>
+<body>
+    <%- include('partials/navbar'); -%>
+
+    <div class="container">
+     <h1>Inicio</h1>
+
+     <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">descrição</th>
+            <th scope="col">Preco</th>
+            <th scope="col">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% produtos.forEach(produto=>{ %>
+          <tr>
+            <th><%=produto.id %></th>
+            <td><%= produto.descricao %></td>
+            <td><%= produto.preco %></td>
+            <td>
+             
+              <form style="display: inline;" method="post" action="/apagarproduto">
+                <input type="hidden" name="id" value="<%= produto.id %>">
+                <button class="btn btn-danger" type="submit" >Apagar</button>
+              </form>
+              <a class="btn btn-warning" href="/produtos/edit/<%= produto.id %>">Editar</a>
+          
+            </td>
+          </tr>
+          <% }) %>
+          
+        </tbody>
+      </table>
+
+
+
+    
+    </div>
+
+</div>
+
+   
+    
+</body>
+<%- include('partials/footer'); -%>

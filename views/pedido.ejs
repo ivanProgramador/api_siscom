@@ -1,0 +1,42 @@
+<%- include('partials/header'); -%>
+<body>
+    <%- include('partials/navbar'); -%>
+
+   
+
+    <div class="container">
+       
+        <div class="card">
+            <div class="card-header">
+                Registro de pedido
+            </div>
+            <div onload="Numero()" class="card-body">
+                <form method="post" action="/criarpedido" >
+                    <label>Cliente</label>
+                    <input type="text" name="cliente" >
+                    <label>Numero Pedido</label>
+                    <input type="text" id="numeroPedido">
+                    
+                </form>
+               
+            </div>
+            
+        </div>
+      
+    </div>
+
+</div>
+<script>
+    function Numero(){
+      var numero_pedido = Math.random();
+      var num_pedido = document.getElementById('#numeroPedido').Value = numero_pedido;
+    }
+    Numero()
+    
+ </script>
+
+
+   
+    
+</body>
+<%- include('partials/footer'); -%>

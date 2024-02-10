@@ -1,0 +1,36 @@
+<%- include('partials/header'); -%>
+<body>
+    <%- include('partials/navbar'); -%>
+
+    <div class="container">
+    <div class="card mt-3">
+
+    <div class="card-header">
+            EDIÇÃO DE PRODUTOS
+    </div>
+    <div class="card-body">
+
+        <form method="post" action="/editarproduto" >
+
+            <label>descrição</label>
+            <input class="form-control" type="text" name="descricao" value="<%= produto.descricao %>">
+
+            <label>Preço</label>
+            <input class="form-control" type="text" name="preco" value="<%= produto.preco %>">
+
+            <input type="hidden" name="id" value="<%= produto.id %>">
+
+            <button class="btn btn-success mt-3" type="submit">Cadastrar</button>
+    
+        </form>
+
+    </div>
+    
+    </div>
+
+</div>
+
+   
+    
+</body>
+<%- include('partials/footer'); -%>
